@@ -12,6 +12,7 @@ langchain-openai
 
 # --- Multi-Agent Orchestration ---
 langgraph
+langchain-google-genai
 
 # --- OpenAI API ---
 openai
@@ -44,6 +45,7 @@ rich
 # --- API Backend (Optional, for web app integration) ---
 fastapi
 uvicorn[standard]
+streamlit
 
 # --- Data Processing ---
 pandas

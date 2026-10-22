@@ -1,0 +1,8 @@
+Multi Agent System/
+    .env
+    agent.py
+    pipeline.py
+    project_structure.txt
+    requirements.txt
+    research_report.json
+    tools.py

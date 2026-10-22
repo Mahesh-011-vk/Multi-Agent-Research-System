@@ -1,0 +1,53 @@
+
+# ==========================================
+# Multi-Agent Research System
+# Python Dependencies
+# ==========================================
+
+# --- LangChain Core & LCEL ---
+langchain
+langchain-core
+langchain-community
+langchain-openai
+
+# --- Multi-Agent Orchestration ---
+langgraph
+
+# --- OpenAI API ---
+openai
+
+# --- Web Search: Tavily ---
+tavily-python
+
+# --- Web Scraping: BeautifulSoup ---
+beautifulsoup4
+requests
+lxml
+
+# --- HTTP & Async Networking ---
+httpx
+aiohttp
+
+# --- Environment Variables ---
+python-dotenv
+
+# --- Data Validation & Structured Outputs ---
+pydantic
+typing-extensions
+
+# --- Retry & Rate Limit Handling ---
+tenacity
+
+# --- Logging & Terminal Output ---
+rich
+
+# --- API Backend (Optional, for web app integration) ---
+fastapi
+uvicorn[standard]
+
+# --- Data Processing ---
+pandas
+
+# --- Testing & Code Quality ---
+pytest
+ruff

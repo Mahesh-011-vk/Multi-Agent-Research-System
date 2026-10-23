@@ -1,4 +1,4 @@
-# Multi-Agent Research System
+Multi Agent Research System
 
 A research assistant that searches the web, reads selected source pages, writes an evidence-led report, and asks a critic to review it. Use the Streamlit interface or run the research pipeline from the command line.
 

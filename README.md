@@ -1,167 +1,223 @@
 <div align="center">
 
-# 🔬 Multi-Agent Research System
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4285F4,50:7B61FF,100:FF4B4B&height=220&section=header&text=Multi-Agent%20Research%20System&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=Search%20%E2%80%A2%20Read%20%E2%80%A2%20Write%20%E2%80%A2%20Critique&descAlignY=58&descSize=18" alt="Multi-Agent Research System banner" />
 
-**An autonomous research assistant that searches the web, reads sources, writes an evidence-led report, and has a critic review it.**
+<a href="https://github.com/Mahesh-011-vk/Multi-Agent-Research-System">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=7B61FF&center=true&vCenter=true&width=640&lines=Autonomous+AI+research+in+one+question;4+specialised+agents.+1+evidence-led+report.;Powered+by+Gemini+%2B+Tavily+%2B+LangChain" alt="Typing animation" />
+</a>
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-Agents-1C3C3C?logo=langchain&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-4285F4?logo=googlegemini&logoColor=white)
-![Tavily](https://img.shields.io/badge/Tavily-Search%20API-0A66C2)
-![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github&logoColor=white)
+<br/>
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-Agents-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)
+![Tavily](https://img.shields.io/badge/Tavily-Search%20API-0A66C2?style=for-the-badge)
+![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github&logoColor=white)
+
+<br/>
+
+**[✨ Features](#-features) · [🛠️ Tech Stack](#️-tech-stack) · [🏗️ Architecture](#️-architecture) · [⚡ Quick Start](#-quick-start) · [📁 Structure](#-project-structure) · [🩺 Troubleshooting](#-troubleshooting)**
 
 </div>
 
 ---
 
-## 📑 Table of Contents
+## 🎯 Overview
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Requirements](#-requirements)
-- [Setup](#-setup)
-- [Run the App](#-run-the-app)
-- [Run from the Command Line](#-run-from-the-command-line)
-- [Project Structure](#-project-structure)
-- [Output Format](#-output-format)
-- [Troubleshooting](#-troubleshooting)
-- [Notes and Limitations](#-notes-and-limitations)
-- [Contributing](#-contributing)
-- [Author](#-author)
+> **Ask one question. Get a researched, cited, and peer-reviewed report.**
+
+Instead of relying on a single prompt, this project splits research across **specialised AI agents**. One finds fresh sources, another reads the best pages, a writer drafts a structured report, and a **critic** audits it for accuracy, evidence, completeness, and clarity.
+
+Use it through a clean **Streamlit web app** or straight from the **command line**.
+
+<div align="center">
+
+<!-- 📸 Add a screenshot or GIF of your Streamlit app here:
+<img src="assets/demo.gif" alt="App demo" width="800" /> -->
+
+</div>
 
 ---
 
-## 🧭 Overview
-
-Multi-Agent Research System splits a research task across specialised agents instead of relying on a single prompt. One agent finds recent sources, another reads the most relevant pages, a writer composes a structured report, and a critic reviews it for accuracy, evidence, completeness, and clarity.
-
-You can use it through a **Streamlit web interface** or run the **pipeline directly from the terminal**.
-
 ## ✨ Features
 
-- **Web research agent** – finds recent, relevant sources using the Tavily Search API.
-- **Webpage reader agent** – extracts text from up to three relevant pages.
-- **Report writer** – produces a structured report with findings, limitations, a conclusion, and source URLs.
-- **Critic pipeline** – reviews the report for accuracy, evidence, completeness, and clarity.
-- **Streamlit interface** – displays the report, supporting evidence, and critic feedback.
-- **Downloadable results** – export as Markdown or JSON.
-- **Persistent output** – the latest run is saved to `research_report.json`.
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🔎 Web Research Agent
+Finds recent, relevant sources using the **Tavily Search API**.
+
+### 📖 Webpage Reader Agent
+Extracts clean text from up to **three** of the most relevant pages.
+
+### ✍️ Report Writer
+Builds a structured report with findings, limitations, a conclusion, and source URLs.
+
+</td>
+<td width="50%" valign="top">
+
+### 🧐 Critic Pipeline
+Reviews the report for **accuracy, evidence, completeness, and clarity**.
+
+### 🖥️ Streamlit Interface
+View the report, evidence, and critic feedback in one place.
+
+### 💾 Export Ready
+Download as **Markdown** or **JSON**. Latest run is auto-saved to `research_report.json`.
+
+</td>
+</tr>
+</table>
+
+---
 
 ## 🛠️ Tech Stack
 
-| Technology | Role in the project |
-| --- | --- |
-| **Python 3.10+** | Core language for the agents, pipeline, and tools |
-| **Streamlit** | Interactive web interface for running research and viewing results |
-| **Pipeline** (`pipeline.py`) | Orchestrates search → read → write → critique stages |
-| **Tavily API** | Web search and page content retrieval for research |
-| **Gemini API** (`gemini-2.5-flash`) | LLM powering the agents, report writer, and critic |
-| **LangChain** | Connects Gemini to agents, tools, and chains |
-| **GitHub** | Version control and project hosting |
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,github,git,vscode&theme=dark" alt="Core tools" />
+
+</div>
+
+| Layer | Technology | Purpose |
+| :---: | --- | --- |
+| 🐍 | **Python 3.10+** | Core language for agents, pipeline, and tools |
+| 🎈 | **Streamlit** | Interactive web UI for running research and viewing results |
+| 🔗 | **Pipeline** (`pipeline.py`) | Orchestrates search → read → write → critique |
+| 🌐 | **Tavily API** | Real-time web search and content retrieval |
+| 🤖 | **Gemini API** (`gemini-2.5-flash`) | LLM powering the agents, writer, and critic |
+| ⛓️ | **LangChain** | Connects Gemini to agents, tools, and chains |
+| 🐙 | **GitHub** | Version control and project hosting |
+
+---
 
 ## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
-    A[User Question] --> B[Search Agent<br/>Tavily API]
-    B --> C[Reader Agent<br/>up to 3 pages]
-    C --> D[Report Writer<br/>Gemini 2.5 Flash]
-    D --> E[Critic<br/>Gemini 2.5 Flash]
-    E --> F[Final Output<br/>Report + Feedback]
-    F --> G[(research_report.json)]
-    F --> H[Streamlit UI<br/>MD / JSON download]
+    A([🧑 User Question]) --> B[🔎 Search Agent<br/>Tavily API]
+    B --> C[📖 Reader Agent<br/>up to 3 pages]
+    C --> D[✍️ Report Writer<br/>Gemini 2.5 Flash]
+    D --> E[🧐 Critic<br/>Gemini 2.5 Flash]
+    E --> F([📄 Report + Feedback])
+    F --> G[(💾 research_report.json)]
+    F --> H[🖥️ Streamlit UI<br/>MD / JSON download]
+
+    style A fill:#7B61FF,color:#fff,stroke:none
+    style B fill:#0A66C2,color:#fff,stroke:none
+    style C fill:#0A66C2,color:#fff,stroke:none
+    style D fill:#4285F4,color:#fff,stroke:none
+    style E fill:#FF4B4B,color:#fff,stroke:none
+    style F fill:#2E7D32,color:#fff,stroke:none
 ```
 
-**Pipeline stages**
+### 🔄 How it works
 
-1. **Search** – the search agent queries Tavily for recent, relevant sources.
-2. **Read** – the reader agent extracts text from up to three selected pages.
-3. **Write** – the report writer builds a structured, evidence-led report.
-4. **Critique** – the critic evaluates accuracy, evidence, completeness, and clarity.
-5. **Deliver** – results are shown in the UI and saved as JSON.
+| Step | Stage | What happens |
+| :---: | --- | --- |
+| **1** | 🔎 **Search** | The search agent queries Tavily for recent, relevant sources |
+| **2** | 📖 **Read** | The reader agent extracts text from up to three selected pages |
+| **3** | ✍️ **Write** | The writer composes a structured, evidence-led report |
+| **4** | 🧐 **Critique** | The critic scores accuracy, evidence, completeness, and clarity |
+| **5** | 📦 **Deliver** | Results appear in the UI and are saved as JSON |
 
-## 📋 Requirements
+---
 
-- Python 3.10 or newer
-- A [Google AI API key](https://aistudio.google.com/app/apikey)
-- A [Tavily API key](https://tavily.com/)
+## ⚡ Quick Start
 
-## ⚙️ Setup
+### 📋 Prerequisites
 
-**1. Clone the repository**
+- 🐍 Python **3.10** or newer
+- 🔑 A [Google AI API key](https://aistudio.google.com/app/apikey)
+- 🔑 A [Tavily API key](https://tavily.com/)
+
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/Mahesh-011-vk/Multi-Agent-Research-System.git
 cd Multi-Agent-Research-System
 ```
 
-**2. Create and activate a virtual environment**
+### 2️⃣ Create a virtual environment
 
 ```bash
 python -m venv .venv
 ```
 
-macOS / Linux:
+<details>
+<summary><b>🍎 macOS / 🐧 Linux</b></summary>
 
 ```bash
 source .venv/bin/activate
 ```
 
-Windows PowerShell:
+</details>
+
+<details>
+<summary><b>🪟 Windows PowerShell</b></summary>
 
 ```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-**3. Install dependencies**
+</details>
+
+### 3️⃣ Install dependencies
 
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-**4. Configure environment variables**
+### 4️⃣ Add your API keys
 
-Create a `.env` file in the project root. Set your Google key as either `GOOGLE_API_KEY` or `GEMINI_API_KEY`, and your Tavily key as `TAVILY_API_KEY`:
+Create a `.env` file in the project root. Use either `GOOGLE_API_KEY` or `GEMINI_API_KEY` for Google, plus `TAVILY_API_KEY`:
 
 ```dotenv
 GOOGLE_API_KEY=your_google_ai_api_key
 TAVILY_API_KEY=your_tavily_api_key
 ```
 
-> 🔒 Keep `.env` private. Never commit API keys. Make sure `.env` is listed in your `.gitignore`.
+> [!WARNING]
+> Keep `.env` private. Never commit API keys, and make sure `.env` is in your `.gitignore`.
 
-## 🚀 Run the App
+---
 
-Start the Streamlit interface:
+## 🚀 Usage
+
+### 🖥️ Option A: Streamlit app
 
 ```bash
 streamlit run app.py
 ```
 
-Open the local URL printed in the terminal, enter a focused research question, and select **Run research**. Completed reports can be downloaded from the interface, and the latest results are saved to `research_report.json` in the working directory.
+Open the local URL from the terminal, enter a focused research question, and click **Run research**. Download the finished report from the interface. The latest results are also saved to `research_report.json`.
 
-## 💻 Run from the Command Line
+### 💻 Option B: Command line
 
 ```bash
 python pipeline.py
 ```
 
-Enter a topic when prompted. The pipeline prints the search results, extracted webpage content, report, and critic feedback, then writes the full results to `research_report.json`.
+Enter a topic when prompted. The pipeline prints search results, extracted page content, the report, and critic feedback, then writes everything to `research_report.json`.
+
+> [!TIP]
+> Focused questions give better results. Try *"What are the latest advances in retrieval-augmented generation?"* instead of *"Tell me about AI"*.
+
+---
 
 ## 📁 Project Structure
 
 ```text
 Multi-Agent-Research-System/
-├── app.py             # Streamlit research interface
-├── pipeline.py        # Coordinates search, reading, writing, and critic stages
-├── agent.py           # Gemini-backed agents and report/critic chains
-├── tools.py           # Tavily web search and webpage extraction tools
-├── requirements.txt   # Python dependencies
-└── .env               # API keys (not committed)
+├── 🎈 app.py             # Streamlit research interface
+├── 🔗 pipeline.py        # Coordinates search, read, write, and critic stages
+├── 🤖 agent.py           # Gemini-backed agents and report/critic chains
+├── 🛠️ tools.py           # Tavily search and webpage extraction tools
+├── 📦 requirements.txt   # Python dependencies
+└── 🔒 .env               # API keys (never committed)
 ```
 
 | File | Purpose |
@@ -172,55 +228,85 @@ Multi-Agent-Research-System/
 | `tools.py` | Tavily web search and webpage extraction tools |
 | `requirements.txt` | Python dependencies |
 
-## 📄 Output Format
+---
 
-Each run produces a report with:
+## 📄 Report Output
 
-- **Findings** – key points supported by sources
-- **Limitations** – gaps or uncertainty in the evidence
-- **Conclusion** – a concise summary
-- **Sources** – the URLs used
-- **Critic feedback** – review of accuracy, evidence, completeness, and clarity
+Every run produces:
 
-The full run is saved to `research_report.json`.
+- 📌 **Findings**: key points backed by sources
+- ⚖️ **Limitations**: gaps or uncertainty in the evidence
+- 🏁 **Conclusion**: a concise summary
+- 🔗 **Sources**: the URLs used
+- 🧐 **Critic feedback**: review of accuracy, evidence, completeness, and clarity
+
+---
 
 ## 🩺 Troubleshooting
 
-| Problem | Likely cause | Fix |
-| --- | --- | --- |
-| `API key not found` error | `.env` missing or misnamed | Confirm `.env` is in the project root with `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) and `TAVILY_API_KEY` |
-| Quota or rate-limit errors | Provider usage limits reached | Wait and retry, or check your Google AI / Tavily plan |
-| Empty or partial page content | Site blocks automated requests | Try a different question or rely on other sources |
-| `ModuleNotFoundError` | Dependencies not installed or venv inactive | Activate the venv and rerun `pip install -r requirements.txt` |
-| `streamlit` not found | Not installed in the active environment | `pip install streamlit` inside the venv |
+<details>
+<summary><b>🔑 API key not found</b></summary>
+
+Confirm `.env` is in the project root and contains `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) and `TAVILY_API_KEY`.
+
+</details>
+
+<details>
+<summary><b>⏳ Quota or rate-limit errors</b></summary>
+
+Provider limits may apply. Wait and retry, or check your Google AI and Tavily plans.
+
+</details>
+
+<details>
+<summary><b>📭 Empty or partial page content</b></summary>
+
+Some sites block automated requests. Try a different question or rely on the other sources.
+
+</details>
+
+<details>
+<summary><b>📦 ModuleNotFoundError or streamlit not found</b></summary>
+
+Activate the virtual environment and rerun `pip install -r requirements.txt`.
+
+</details>
+
+---
 
 ## ⚠️ Notes and Limitations
 
 - Research requires network access and valid Google AI and Tavily API keys. Provider quotas and usage limits may apply.
-- Search results and extracted page content depend on source availability and may be incomplete. Verify important claims against the linked sources.
+- Search results and extracted page content depend on source availability and may be incomplete. **Verify important claims against the linked sources.**
 - The webpage reader retrieves publicly accessible HTTP/HTTPS pages; some sites may block automated requests.
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m "Add your feature"`
-4. Push the branch: `git push origin feature/your-feature`
-5. Open a pull request
-
-## 👤 Author
-
-**Mahesh S**
-
-- GitHub: [Mahesh-011-vk](https://github.com/Mahesh-011-vk)
-- LinkedIn: [mahesh-s-318367203](https://linkedin.com/in/mahesh-s-318367203)
 
 ---
 
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. 🍴 Fork the repository
+2. 🌿 Create a branch: `git checkout -b feature/your-feature`
+3. 💾 Commit: `git commit -m "Add your feature"`
+4. 📤 Push: `git push origin feature/your-feature`
+5. 🔀 Open a pull request
+
+---
+
+## 👤 Author
+
 <div align="center">
 
-⭐ If you find this project useful, consider giving it a star on GitHub.
+**Mahesh S**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Mahesh--011--vk-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mahesh-011-vk)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mahesh%20S-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mahesh-s-318367203)
+
+<br/>
+
+⭐ **If you find this project useful, give it a star!** ⭐
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF4B4B,50:7B61FF,100:4285F4&height=120&section=footer" alt="footer wave" />
 
 </div>
